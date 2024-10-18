@@ -15,7 +15,7 @@ def create_table():
         date_time DATETIME);''')
 
         cursor.execute('''CREATE TABLE Documents (
-        id_in_table_City INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+        id_in_table_Documents INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
         user_id INTEGER,
         name_document VARCHAR(50),
         FOREIGN KEY (user_id) REFERENCES User(user_id));''')
@@ -40,7 +40,7 @@ def insert_into_table_User(user_id: int, user_name: str, user_surname: str, user
     try:
         cursor.execute('''BEGIN''')
         cursor.execute('''INSERT INTO User (user_id, user_name, user_surname, username, date_time) VALUES (?, ?, ?, ?, ?);''',
-                       (user_id, user_name, user_surname, username, date_time ))
+                       (user_id, user_name, user_surname, username, date_time))
         cursor.execute('''COMMIt''')
         print("Транзакция прошла успешно")
     except BaseException as e:

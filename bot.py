@@ -91,7 +91,6 @@ async def robot_vacuum_cleaner_handler(message: types.Message):
 
 @dp.message_handler(lambda message: message.text == "📱 Xiaomi 14")
 async def xiaomi_14_handler(message: types.Message):
-    print(message)
     with open("D:/PycharmProjects/Домашние задания/ДЗ telegram-bot_quiz/файлы/Xiaomi 14.pdf", "rb") as document:
         await message.reply("Держи полезные материалы")
         await bot.send_document(chat_id=message.chat.id, document=document)
