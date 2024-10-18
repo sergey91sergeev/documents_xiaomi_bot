@@ -1,7 +1,7 @@
 import sqlite3
 import datetime
 def create_table():
-    """Функция создает базу данных bot.db и таблицы User и City"""
+    """Функция создает базу данных bot.db и таблицы User и Documents"""
     connection = sqlite3.connect("bot.db")
     cursor = connection.cursor()
     try:
@@ -52,7 +52,7 @@ def insert_into_table_User(user_id: int, user_name: str, user_surname: str, user
         connection.close()
 
 def insert_into_table_Documents(user_id: int, name_document: str):
-    """Функция добавляет значения в таблицу City базы данных bot.db"""
+    """Функция добавляет значения в таблицу Documents базы данных bot.db"""
     connection = sqlite3.connect("bot.db")
     cursor = connection.cursor()
     try:
